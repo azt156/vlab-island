@@ -352,3 +352,10 @@ table.tbl{border-collapse:collapse;width:100%;min-width:580px}
 .ps-cell.got{filter:none;opacity:1;background:var(--yellow-soft)}
 .ps-cell:hover{transform:translateY(-2px)}
 .badge-note{margin-top:10px;background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:8px 14px;font-size:1rem}
+
+/* v3.2.2 回報信箱 */
+.mailbox{display:flex;align-items:center;gap:20px;padding:22px 26px;flex-wrap:wrap}
+.mb-emoji{font-size:3rem;flex:none;filter:drop-shadow(2.5px 2.5px 0 rgba(45,49,66,.25))}
+.mb-txt{flex:1;min-width:260px}
+.mb-txt b{font-size:1.18rem}
+.mb-txt p{margin:6px 0 0;font-weight:500;color:var(--ink-soft)}

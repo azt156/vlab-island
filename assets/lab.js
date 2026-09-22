@@ -1,4 +1,4 @@
-/* 科學探險島 · 互動引擎 v3.2（徽章圖鑑）（暫存制：作答手動暫存／全完成自動存）（功能同 v2；v2.5.1 僅角色圖修正） */
+/* 科學探險島 · 互動引擎 v3.2.2（徽章＋信箱）（暫存制：作答手動暫存／全完成自動存）（功能同 v2；v2.5.1 僅角色圖修正） */
 (function () {
   'use strict';
 
@@ -326,7 +326,7 @@
       }
     }
     goals.forEach(function (g) { g.addEventListener('change', award); });
-    award(); /* 已完成過的頁面自動補發 */
+    award();
   }
 
   function initPassport() {
