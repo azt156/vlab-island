@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心跳的祕密：心臟是超強快遞員｜科學探險島</title>
+<meta name="description" content="動手測量運動前後的心跳，一關一關探究心臟與循環系統的祕密！">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-lab="heart-rate">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="dd-dna" viewBox="0 0 64 64">
+      <path d="M22 5c0 13 20 16 20 27S22 45 22 59" fill="none" stroke="#4D96FF" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M42 5c0 13-20 16-20 27s20 13 20 27" fill="none" stroke="#FF8FAB" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M25 14h14M23.5 25h17M23.5 39h17M25 50h14" stroke="#2D3142" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="dd-heart" viewBox="0 0 64 64">
+      <path d="M32 55S9 41 9 24.5A11.5 11.5 0 0 1 32 21a11.5 11.5 0 0 1 23 3.5C55 41 32 55 32 55z" fill="#FF8FAB" stroke="#2D3142" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M20 30h7l3-7 4 13 3-6h7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="dd-spark" viewBox="0 0 64 64">
+      <path d="M32 5l5.5 20L58 32l-20.5 7L32 59l-5.5-20L6 32l20.5-7z" fill="#FFD93D" stroke="#2D3142" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="backlink" href="index.html">← 探險島</a>
+    <span class="topbar-title">心跳的祕密：心臟是超強快遞員</span>
+    <div class="meter-box">
+      <div class="meter"><div class="meter-fill"></div></div>
+      <span class="meter-txt">⭐ 0/6</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="top">
+    <div class="doodle" style="--rot:-8deg;top:24px;right:26%;width:86px;height:86px"><svg><use href="#dd-heart"/></svg></div>
+    <div class="doodle" style="--rot:10deg;top:170px;right:30%;width:50px;height:50px;animation-delay:.8s"><svg><use href="#dd-spark"/></svg></div>
+    <div class="doodle" style="--rot:6deg;top:250px;right:23%;width:62px;height:62px;animation-delay:1.5s"><svg><use href="#dd-dna"/></svg></div>
+
+    <div class="hero-flex">
+      <div class="hero-txt">
+        <div class="tags">
+          <span class="tag grade">國一上生物</span>
+          <span class="tag sample">範例學習單</span>
+          <span class="tag">⏱ 約 20 分鐘</span>
+          <span class="tag platform">Javalab</span>
+          <span class="tag platform">HHMI</span>
+          <span class="tag platform">MERLOT</span>
+          <span class="tag code">Db-IV-2</span>
+        </div>
+        <h1>心跳的祕密：<span class="hl">心臟是超強快遞員</span></h1>
+        <p class="sub">任務簡報：小惠發現運動前後心跳次數差很多！你的任務是——用虛擬心率偵測器量出自己的數據，破解心臟快遞的祕密。</p>
+      </div>
+      <img class="char char-hero" src="assets/char-xin-present.png" alt="小欣老師" loading="lazy">
+    </div>
+
+    <div class="guide">
+      <div class="g-step"><span class="n">1</span><span class="g-text">讀故事情境<span class="t">小惠的發現</span></span></div>
+      <div class="g-step"><span class="n">2</span><span class="g-text">動手玩實驗<span class="t">先看步驟再操作</span></span></div>
+      <div class="g-step"><span class="n">3</span><span class="g-text">記錄與闖關<span class="t">填數據、答問題</span></span></div>
+      <div class="g-step"><span class="n">4</span><span class="g-text">自我驗證<span class="t">最後回頭打勾⭐</span></span></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-blue btn-hero" href="#s2">🔬 直接去玩實驗</a>
+      <img class="char char-cta" src="assets/char-hui-point.png" alt="小惠同學" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section" id="s1">
+    <div class="sec-head">
+      <span class="sec-num c-red">1</span>
+      <h2 class="sec-title">情境引導</h2>
+    </div>
+    <div class="card story">
+      <div class="story-in">
+        <img class="char char-side" src="assets/char-hui-point.png" alt="小惠同學" loading="lazy">
+        <div class="story-txt">
+          <span class="who">🙋 小惠的發現</span>
+          <p>小惠量完脈搏後發現：運動前後心跳次數差很多，而且不同人恢復到平靜的速度也不一樣。<br>到底心跳受哪些因素影響？我們可以怎麼「量」出證據來說明？</p>
+        </div>
+      </div>
+    </div>
+    <div class="next-row"><a class="btn btn-white btn-sm" href="#s2">下一關：實驗怎麼玩 ↓</a></div>
+  </section>
+
+  <!-- 工作站大卡：同一個框框——左邊指導語、右邊實驗艙（桌面對照／手機上下） -->
+  <section class="section" id="s2">
+    <div class="sec-head">
+      <span class="sec-num c-blue">2</span>
+      <h2 class="sec-title">實驗工作站：Javalab 心率偵測器</h2>
+      <p class="sec-sub">先把 5 個步驟讀完，再動手做！</p>
+    </div>
+
+    <div class="card ws">
+      <p class="ref-note ws-intro">💻 電腦版：同一個框框裡，<strong>左邊讀步驟、右邊做實驗</strong>，實驗畫面會一直陪著你。📱 手機版：先讀步驟，往下就是實驗艙。</p>
+      <div class="split">
+        <div class="split-left">
+          <div class="ws-head-row">
+            <p style="margin-top:0;font-weight:700">🧑‍🏫 操作指導語（請依序完成）</p>
+            <img class="char" style="width:82px" src="assets/char-xin-flask.png" alt="小欣老師" loading="lazy">
+          </div>
+          <ol class="steps">
+            <li class="step"><span class="step-n">1</span><p><strong>測量前的準備</strong>：找一個安靜、光線充足的地方坐下，將裝置（手機或電腦）鏡頭對準食指指腹，輕輕蓋住鏡頭即可，不要用力壓、也不要移動手指，以免影響偵測結果。</p></li>
+            <li class="step"><span class="step-n">2</span><p><strong>靜息心率測量</strong>：安靜坐著休息 3 分鐘，等身體恢復到平常狀態後再開始測量，記錄畫面顯示的心率數值（次/分），填入下方「靜息心率」欄位。</p></li>
+            <li class="step"><span class="step-n">3</span><p><strong>運動後心率測量</strong>：原地跳躍或深蹲 1 分鐘（動作強度以「會喘、心跳明顯加快」為準），運動結束後立刻將手指放回鏡頭前測量，記錄第一筆數值於「運動後立即」欄位。</p></li>
+            <li class="step"><span class="step-n">4</span><p><strong>恢復期追蹤</strong>：之後每隔 1 分鐘測量一次，連續測 3 次，分別記錄於「運動後 1／2／3 分鐘」欄位，觀察心率如何逐漸恢復。</p></li>
+            <li class="step"><span class="step-n">5</span><p><strong>重複驗證</strong>：將整個流程（靜息 → 運動 → 恢復）重複做一次，把兩次數據取平均，可以減少按壓力道不同、光線變化等造成的誤差。</p></li>
+          </ol>
+          <div class="tip">
+            <b>💡 測量小提醒</b>
+            <ul>
+              <li>若偵測不到心跳訊號，嘗試調整手指位置或改善光源。</li>
+              <li>測量時盡量保持手指不動、不要說話，才能得到穩定的訊號。</li>
+              <li>每個人的心率反應不同，數據若和同學差很多是正常的，可以留到討論階段一起分析原因。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="split-right">
+          <p style="margin-top:0;font-weight:700">🧪 實驗艙（讀完左邊步驟，在這裡動手做）：</p>
+          <div class="pod">
+            <div class="pod-bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url">javalab.org/en/heart_rate_counter_en</span>
+              <a class="pod-open" href="https://javalab.org/en/heart_rate_counter_en/" target="_blank" rel="noopener">🔎 放大操作</a>
+            </div>
+            <div class="pod-body">
+              <iframe src="https://javalab.org/en/heart_rate_counter_en/" title="Javalab Heart Rate Counter 虛擬實驗" loading="lazy"></iframe>
+            </div>
+            <div class="pod-note">實驗艙空白或卡卡的？點右上角「🔎 放大操作」在新分頁開啟，手機操作更順手。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="next-row"><a class="btn btn-white btn-sm" href="#s3">下一關：記錄數據 ↓</a></div>
+  </section>
+
+  <section class="section" id="s3">
+    <div class="sec-head">
+      <span class="sec-num c-green">3</span>
+      <h2 class="sec-title">數據實驗室</h2>
+      <img class="char char-mini" src="assets/char-hui-write.png" alt="小惠同學" loading="lazy">
+      <p class="sec-sub">把剛才測到的數字填進格子，「平均」會自動算好；不知道怎麼填？按「填入範例」看看！</p>
+    </div>
+    <div class="card">
+      <div class="ref-note">📏 參考範圍：安靜坐著時，心率大約 <strong>60～100</strong> 次/分；運動後可能到 <strong>120～160</strong>。如果你填的數字差太多，橘色提醒會出現——再量一次看看！</div>
+      <p style="margin:0 0 12px;display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="btn btn-white btn-sm sample-fill" data-sample='{"r0c1":"72","r0c2":"75","r1c1":"118","r1c2":"121","r2c1":"95","r2c2":"98","r3c1":"84","r3c2":"86","r4c1":"77","r4c2":"79"}'>✨ 填入範例數據看看</button><button type="button" class="btn btn-white btn-sm clear-fill">🧹 清空重填自己的數據</button></p>
+      <div class="tbl-wrap">
+        <table class="tbl" data-avg>
+          <thead>
+            <tr><th>測量情境</th><th>第 1 次 (次/分)</th><th>第 2 次 (次/分)</th><th>平均</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="head">靜息心率</td><td><input class="cell-in" data-k="r0c1" data-min="30" data-max="220" inputmode="decimal" aria-label="靜息心率第 1 次"></td><td><input class="cell-in" data-k="r0c2" data-min="30" data-max="220" inputmode="decimal" aria-label="靜息心率第 2 次"></td><td class="avg-cell"><span data-avg-cell data-row="0">—</span></td></tr>
+            <tr><td class="head">運動後立即</td><td><input class="cell-in" data-k="r1c1" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後立即第 1 次"></td><td><input class="cell-in" data-k="r1c2" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後立即第 2 次"></td><td class="avg-cell"><span data-avg-cell data-row="1">—</span></td></tr>
+            <tr><td class="head">運動後 1 分鐘</td><td><input class="cell-in" data-k="r2c1" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後 1 分鐘第 1 次"></td><td><input class="cell-in" data-k="r2c2" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後 1 分鐘第 2 次"></td><td class="avg-cell"><span data-avg-cell data-row="2">—</span></td></tr>
+            <tr><td class="head">運動後 2 分鐘</td><td><input class="cell-in" data-k="r3c1" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後 2 分鐘第 1 次"></td><td><input class="cell-in" data-k="r3c2" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後 2 分鐘第 2 次"></td><td class="avg-cell"><span data-avg-cell data-row="3">—</span></td></tr>
+            <tr><td class="head">運動後 3 分鐘</td><td><input class="cell-in" data-k="r4c1" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後 3 分鐘第 1 次"></td><td><input class="cell-in" data-k="r4c2" data-min="30" data-max="220" inputmode="decimal" aria-label="運動後 3 分鐘第 2 次"></td><td class="avg-cell"><span data-avg-cell data-row="4">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin:16px 0 0"><button type="button" class="btn btn-green btn-sm" id="draw-chart">📈 畫出我的心率曲線</button></p>
+      <div class="chart-box" id="chart-box"><canvas id="chart"></canvas></div>
+    </div>
+    <div class="next-row"><a class="btn btn-white btn-sm" href="#s4">下一關：探究關卡 ↓</a></div>
+  </section>
+
+  <section class="section" id="s4">
+    <div class="sec-head">
+      <span class="sec-num c-purple">4</span>
+      <h2 class="sec-title">探究關卡</h2>
+      <img class="char char-mini" src="assets/char-xin-thumb.png" alt="小欣老師" loading="lazy">
+      <p class="sec-sub">用你的數據回答四個問題。卡住了就按提示；先寫下想法（5 個字以上），才能解鎖參考答案喔！</p>
+    </div>
+
+    <article class="card qcard" data-q="q1">
+      <div class="q-head">
+        <span class="q-badge think">探究 1</span>
+        <span class="q-tag">觀察與定題</span>
+      </div>
+      <p class="q-text">從你的數據中，你觀察到什麼現象？你想進一步探究的問題是什麼？</p>
+      <div class="hints">
+        <button type="button" class="hint-btn" data-target="h1a" data-n="1" aria-expanded="false">💡 提示 1</button>
+        <div class="hint" id="h1a">看看你的表格：運動後的數字跟靜息時比起來，變大還是變小？後來又怎麼變化？</div>
+        <button type="button" class="hint-btn" data-target="h1b" data-n="2" aria-expanded="false">💡 提示 2</button>
+        <div class="hint" id="h1b">先寫「我觀察到……」，再試著問一個「為什麼」或「跟什麼有關」的問題。</div>
+      </div>
+      <div class="write">
+        <label for="ta-q1">✏️ 先寫下我的想法</label>
+        <textarea id="ta-q1" data-k="q1" placeholder="我觀察到……我想知道……"></textarea>
+        <span class="saved">✔ 已自動保存</span>
+      </div>
+      <div class="ans-zone">
+        <div class="locked">🔒 參考答案在保險箱裡——先在上面寫下你的想法（5 個字以上）就能解鎖！</div>
+        <button type="button" class="btn btn-purple btn-sm ans-open" aria-expanded="false" disabled>🔓 看看參考答案</button>
+        <div class="ans-panel">
+          <h4>🔑 參考答案</h4>
+          <p>你應該觀察到：運動後心率明顯上升，並隨時間逐漸下降、趨近運動前的數值。可以探究的問題例如：「心率上升幅度和運動強度有什麼關係？」或「不同人恢復到平靜心率所需的時間為什麼不同？」</p>
+          <p class="chips-label">自我檢核：這些重點我有寫到嗎？點一點做記號！</p>
+          <div class="chips">
+            <button type="button" class="chip">運動後心率上升</button>
+            <button type="button" class="chip">逐漸恢復平靜</button>
+            <button type="button" class="chip">提出一個問題</button>
+          </div>
+          <div class="assess">
+            <button type="button" class="btn btn-green btn-sm" data-v="good">😎 我答得不錯！</button>
+            <button type="button" class="btn btn-white btn-sm" data-v="again">🤔 我想再改一次</button>
+          </div>
+          <p class="encourage">沒關係！對照答案修改你的想法，科學家也是這樣一次次變厲害的 💪</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card qcard" data-q="q2">
+      <div class="q-head">
+        <span class="q-badge think">探究 2</span>
+        <span class="q-tag">計劃與執行</span>
+      </div>
+      <p class="q-text">這次測量中，哪些是操縱變因？哪些是控制變因（例如測量姿勢、休息時間）？為什麼要控制它們？</p>
+      <div class="hints">
+        <button type="button" class="hint-btn" data-target="h2a" data-n="1" aria-expanded="false">💡 提示 1</button>
+        <div class="hint" id="h2a">「操縱變因」就是你故意改變的那件事——這次實驗你故意改變了什麼？（提示：身體的什麼狀態？）</div>
+        <button type="button" class="hint-btn" data-target="h2b" data-n="2" aria-expanded="false">💡 提示 2</button>
+        <div class="hint" id="h2b">想像：如果每次測量時姿勢、光線都不一樣，數據的差異就分不出來是運動造成的還是測量誤差——這就是為什麼要控制！</div>
+      </div>
+      <div class="write">
+        <label for="ta-q2">✏️ 先寫下我的想法</label>
+        <textarea id="ta-q2" data-k="q2" placeholder="操縱變因是……控制變因有……"></textarea>
+        <span class="saved">✔ 已自動保存</span>
+      </div>
+      <div class="ans-zone">
+        <div class="locked">🔒 參考答案在保險箱裡——先在上面寫下你的想法（5 個字以上）就能解鎖！</div>
+        <button type="button" class="btn btn-purple btn-sm ans-open" aria-expanded="false" disabled>🔓 看看參考答案</button>
+        <div class="ans-panel">
+          <h4>🔑 參考答案</h4>
+          <p>操縱變因是「身體活動狀態」（靜息／運動後／恢復期各時間點）；控制變因包含測量姿勢、每次測量前的休息時間、環境光線與手指按壓方式等。控制它們才能確保心率的變化只反映運動的影響，而不是測量誤差。</p>
+          <p class="chips-label">自我檢核：這些重點我有寫到嗎？點一點做記號！</p>
+          <div class="chips">
+            <button type="button" class="chip">操縱變因＝活動狀態</button>
+            <button type="button" class="chip">控制變因舉例</button>
+            <button type="button" class="chip">控制是為了公平</button>
+          </div>
+          <div class="assess">
+            <button type="button" class="btn btn-green btn-sm" data-v="good">😎 我答得不錯！</button>
+            <button type="button" class="btn btn-white btn-sm" data-v="again">🤔 我想再改一次</button>
+          </div>
+          <p class="encourage">沒關係！對照答案修改你的想法，科學家也是這樣一次次變厲害的 💪</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card qcard" data-q="q3">
+      <div class="q-head">
+        <span class="q-badge think">探究 3</span>
+        <span class="q-tag">分析與發現</span>
+      </div>
+      <p class="q-text">將你的數據畫成折線圖（橫軸：時間，縱軸：心率）。心率恢復到靜息值大約花了多久？</p>
+      <div class="hints">
+        <button type="button" class="hint-btn" data-target="h3a" data-n="1" aria-expanded="false">💡 提示 1</button>
+        <div class="hint" id="h3a">回到上一關的「數據實驗室」，按「📈 畫出我的心率曲線」就能自動畫好圖！</div>
+        <button type="button" class="hint-btn" data-target="h3b" data-n="2" aria-expanded="false">💡 提示 2</button>
+        <div class="hint" id="h3b">找曲線從「高高的」變回「平平的」的地方，那裡大約是第幾分鐘？</div>
+      </div>
+      <div class="write">
+        <label for="ta-q3">✏️ 先寫下我的想法</label>
+        <textarea id="ta-q3" data-k="q3" placeholder="我的曲線長得像……大約第……分鐘恢復"></textarea>
+        <span class="saved">✔ 已自動保存</span>
+      </div>
+      <div class="ans-zone">
+        <div class="locked">🔒 參考答案在保險箱裡——先在上面寫下你的想法（5 個字以上）就能解鎖！</div>
+        <button type="button" class="btn btn-purple btn-sm ans-open" aria-expanded="false" disabled>🔓 看看參考答案</button>
+        <div class="ans-panel">
+          <h4>🔑 參考答案</h4>
+          <p>折線圖應該呈現「運動後心率驟升 → 隨時間遞減 → 漸趨平緩並接近靜息值」的曲線。多數人在運動後 3～5 分鐘內大致恢復到接近靜息值，但仍因個人體能差異而不同。</p>
+          <p class="chips-label">自我檢核：這些重點我有寫到嗎？點一點做記號！</p>
+          <div class="chips">
+            <button type="button" class="chip">曲線先升後降</button>
+            <button type="button" class="chip">約 3～5 分鐘恢復</button>
+            <button type="button" class="chip">每個人不太一樣</button>
+          </div>
+          <div class="assess">
+            <button type="button" class="btn btn-green btn-sm" data-v="good">😎 我答得不錯！</button>
+            <button type="button" class="btn btn-white btn-sm" data-v="again">🤔 我想再改一次</button>
+          </div>
+          <p class="encourage">沒關係！對照答案修改你的想法，科學家也是這樣一次次變厲害的 💪</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card qcard" data-q="q4">
+      <div class="q-head">
+        <span class="q-badge think">探究 4</span>
+        <span class="q-tag">討論與傳達</span>
+      </div>
+      <p class="q-text">運動時肌肉需要更多氧氣與養分，心臟為什麼要加快跳動？這跟循環系統的哪個功能有關？請用「心臟」「血液」「循環系統」等詞彙說明你的推論。再和同組同學比較恢復時間：若有人恢復特別快，可能的原因是什麼？</p>
+      <div class="hints">
+        <button type="button" class="hint-btn" data-target="h4a" data-n="1" aria-expanded="false">💡 提示 1</button>
+        <div class="hint" id="h4a">肌肉運動時需要更多「貨物」（氧氣和養分），誰負責送貨？心臟要怎麼做才送得夠快？</div>
+        <button type="button" class="hint-btn" data-target="h4b" data-n="2" aria-expanded="false">💡 提示 2</button>
+        <div class="hint" id="h4b">想想看：常常運動、心肺功能好的人，心臟每跳一下能送出更多血液——他們需要跳那麼久才補得回來嗎？</div>
+      </div>
+      <div class="write">
+        <label for="ta-q4">✏️ 先寫下我的想法</label>
+        <textarea id="ta-q4" data-k="q4" placeholder="心臟加快跳動是因為……恢復快的人可能……"></textarea>
+        <span class="saved">✔ 已自動保存</span>
+      </div>
+      <div class="ans-zone">
+        <div class="locked">🔒 參考答案在保險箱裡——先在上面寫下你的想法（5 個字以上）就能解鎖！</div>
+        <button type="button" class="btn btn-purple btn-sm ans-open" aria-expanded="false" disabled>🔓 看看參考答案</button>
+        <div class="ans-panel">
+          <h4>🔑 參考答案</h4>
+          <p>運動時肌肉細胞需要更多氧氣與養分以進行代謝，心臟因此加快跳動、增加每分鐘的心輸出量，透過循環系統把帶有氧氣與養分的血液更快運送到全身細胞，同時加速代謝廢物（如二氧化碳）的排除。心肺功能較好的人，心臟每次搏動能輸送更多血液，因此恢復到平靜心率所需的時間通常較短。</p>
+          <p class="chips-label">自我檢核：這些重點我有寫到嗎？點一點做記號！</p>
+          <div class="chips">
+            <button type="button" class="chip">心臟加速輸出血液</button>
+            <button type="button" class="chip">血液運送氧氣養分</button>
+            <button type="button" class="chip">心肺功能好恢復快</button>
+          </div>
+          <div class="assess">
+            <button type="button" class="btn btn-green btn-sm" data-v="good">😎 我答得不錯！</button>
+            <button type="button" class="btn btn-white btn-sm" data-v="again">🤔 我想再改一次</button>
+          </div>
+          <p class="encourage">沒關係！對照答案修改你的想法，科學家也是這樣一次次變厲害的 💪</p>
+        </div>
+      </div>
+    </article>
+    <div class="next-row"><a class="btn btn-white btn-sm" href="#s5">下一關：延伸挑戰 ↓</a></div>
+  </section>
+
+  <section class="section" id="s5">
+    <div class="sec-head">
+      <span class="sec-num c-pink">5</span>
+      <h2 class="sec-title">延伸挑戰（進階，選做）</h2>
+      <p class="sec-sub">還不過癮？點開下面的挑戰卡，繼續探險！</p>
+    </div>
+
+    <details class="card xcard">
+      <summary>🫀 挑戰 A：使用 HHMI Cardiology Virtual Lab 進行病例判讀 <span class="arrow">▶</span></summary>
+      <div class="x-body">
+        <p style="font-weight:700">在這個模擬中，你將扮演醫生，透過聽診、心電圖等工具替病人做初步診斷。試著記錄：這位病人的心音／心電圖與正常人有何不同？可能對應到哪一種循環系統的異常？（英文介面）</p>
+        <p>這個平台不開放崁入（放進來會是空白），請點按鈕在新分頁開啟：</p>
+        <p><a class="btn btn-blue btn-sm" href="https://media.hhmi.org/biointeractive/vlabs/cardiology3/content/index.html" target="_blank" rel="noopener">🚀 前往 HHMI Cardiology Virtual Lab</a></p>
+      </div>
+    </details>
+
+    <details class="card xcard">
+      <summary>🩺 挑戰 B：使用 MERLOT CardioLab 探討血壓恆定 <span class="arrow">▶</span></summary>
+      <div class="x-body">
+        <p style="font-weight:700">嘗試改變心率、血管半徑、血液黏度等變因，觀察血壓如何變化。這與「身體如何維持穩定狀態」有什麼相似之處？</p>
+        <p>這個平台是資源介紹頁，不適合直接嵌入，請點按鈕在新分頁開啟：</p>
+        <p><a class="btn btn-blue btn-sm" href="https://virtuallabs.merlot.org/vl_biology_blol_cardio.html" target="_blank" rel="noopener">🚀 前往 MERLOT CardioLab</a></p>
+      </div>
+    </details>
+    <div class="next-row"><a class="btn btn-white btn-sm" href="#s6">下一關：反思時光 ↓</a></div>
+  </section>
+
+  <section class="section" id="s6">
+    <div class="sec-head">
+      <span class="sec-num c-yellow">6</span>
+      <h2 class="sec-title">反思時光</h2>
+      <p class="sec-sub">最後兩題，沉澱一下今天學到的東西！</p>
+    </div>
+
+    <article class="card qcard" data-q="r1">
+      <div class="q-head">
+        <span class="q-badge reflect">反思 1</span>
+        <span class="q-tag">學習反思</span>
+      </div>
+      <p class="q-text">這次的虛擬實驗和課本上的敘述比較起來，哪裡讓你更容易理解「循環系統的運輸功能」？</p>
+      <div class="hints">
+        <button type="button" class="hint-btn" data-target="hr1a" data-n="1" aria-expanded="false">💡 提示 1</button>
+        <div class="hint" id="hr1a">課本是文字和圖片，虛擬實驗多了什麼？（數字？變化？還是「自己動手」的感覺？）</div>
+      </div>
+      <div class="write">
+        <label for="ta-r1">✏️ 先寫下我的想法</label>
+        <textarea id="ta-r1" data-k="r1" placeholder="我覺得虛擬實驗……"></textarea>
+        <span class="saved">✔ 已自動保存</span>
+      </div>
+      <div class="ans-zone">
+        <div class="locked">🔒 參考答案在保險箱裡——先在上面寫下你的想法（5 個字以上）就能解鎖！</div>
+        <button type="button" class="btn btn-purple btn-sm ans-open" aria-expanded="false" disabled>🔓 看看參考答案</button>
+        <div class="ans-panel">
+          <h4>🔑 參考答案</h4>
+          <p>虛擬實驗能讓你「即時看到」自己的心率隨運動而變化的實際數字與趨勢，比課本的靜態文字敘述更直觀，有助於把「心輸出量增加」等抽象概念與具體數據連結起來。</p>
+          <p class="chips-label">自我檢核：這些重點我有寫到嗎？點一點做記號！</p>
+          <div class="chips">
+            <button type="button" class="chip">即時看到數據變化</button>
+            <button type="button" class="chip">比課本更直觀</button>
+          </div>
+          <div class="assess">
+            <button type="button" class="btn btn-green btn-sm" data-v="good">😎 我答得不錯！</button>
+            <button type="button" class="btn btn-white btn-sm" data-v="again">🤔 我想再改一次</button>
+          </div>
+          <p class="encourage">沒關係！對照答案修改你的想法，科學家也是這樣一次次變厲害的 💪</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card qcard" data-q="r2">
+      <div class="q-head">
+        <span class="q-badge reflect">反思 2</span>
+        <span class="q-tag">學習反思</span>
+      </div>
+      <p class="q-text">如果要在教室裡用真人（非虛擬工具）重現這個實驗，需要注意哪些操作安全或誤差來源？</p>
+      <div class="hints">
+        <button type="button" class="hint-btn" data-target="hr2a" data-n="1" aria-expanded="false">💡 提示 1</button>
+        <div class="hint" id="hr2a">真人實驗牽涉到「人」：同學的身體狀況、情緒、環境……哪些會影響安全？哪些會影響數據準確？</div>
+      </div>
+      <div class="write">
+        <label for="ta-r2">✏️ 先寫下我的想法</label>
+        <textarea id="ta-r2" data-k="r2" placeholder="安全方面……誤差方面……"></textarea>
+        <span class="saved">✔ 已自動保存</span>
+      </div>
+      <div class="ans-zone">
+        <div class="locked">🔒 參考答案在保險箱裡——先在上面寫下你的想法（5 個字以上）就能解鎖！</div>
+        <button type="button" class="btn btn-purple btn-sm ans-open" aria-expanded="false" disabled>🔓 看看參考答案</button>
+        <div class="ans-panel">
+          <h4>🔑 參考答案</h4>
+          <p>若改用真人操作（如把脈、聽診器），需注意：測量者應避免過度用力壓迫、避免讓有心血管疾病史的同學進行劇烈運動；測量時的情緒緊張、環境溫度、手部出汗等都可能造成誤差，應盡量控制環境一致並多次測量取平均。</p>
+          <p class="chips-label">自我檢核：這些重點我有寫到嗎？點一點做記號！</p>
+          <div class="chips">
+            <button type="button" class="chip">注意身體狀況與安全</button>
+            <button type="button" class="chip">環境與情緒會造成誤差</button>
+            <button type="button" class="chip">多次測量取平均</button>
+          </div>
+          <div class="assess">
+            <button type="button" class="btn btn-green btn-sm" data-v="good">😎 我答得不錯！</button>
+            <button type="button" class="btn btn-white btn-sm" data-v="again">🤔 我想再改一次</button>
+          </div>
+          <p class="encourage">沒關係！對照答案修改你的想法，科學家也是這樣一次次變厲害的 💪</p>
+        </div>
+      </div>
+    </article>
+    <div class="next-row"><a class="btn btn-white btn-sm" href="#s7">最後一關：自我驗證 ↓</a></div>
+  </section>
+
+  <section class="section" id="s7">
+    <div class="sec-head">
+      <span class="sec-num c-orange">🏁</span>
+      <h2 class="sec-title">自我驗證：我學會了嗎？</h2>
+      <p class="sec-sub">跑完一整輪了！現在回頭檢查——下面四件事你真的會了嗎？會就打勾；不太確定？點旁邊的按鈕回那一關再練一次。</p>
+    </div>
+    <div class="card">
+      <ul class="quests">
+        <li class="goal-row"><label class="quest"><input type="checkbox" data-k="lg1" data-goal><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span class="txt">我能操作虛擬心率偵測工具，正確測得自己的心率</span></label><a class="back-pill" href="#s2">🔁 回第 2 關</a></li>
+        <li class="goal-row"><label class="quest"><input type="checkbox" data-k="lg2" data-goal><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span class="txt">我能設計對照情境（靜息 vs. 運動後），並控制測量條件一致</span></label><a class="back-pill" href="#s2">🔁 回第 2 關</a></li>
+        <li class="goal-row"><label class="quest"><input type="checkbox" data-k="lg3" data-goal><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span class="txt">我能將多次測量數據整理成表格或折線圖</span></label><a class="back-pill" href="#s3">🔁 回第 3 關</a></li>
+        <li class="goal-row"><label class="quest"><input type="checkbox" data-k="lg4" data-goal><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span class="txt">我能根據數據推論心臟與循環系統如何回應身體需求</span></label><a class="back-pill" href="#s4">🔁 回第 4 關</a></li>
+      </ul>
+      <div class="loop-done">
+        <div class="loop-chars">
+          <img class="char" src="assets/char-hui-cheer.png" alt="小惠同學" loading="lazy">
+          <img class="char" src="assets/char-xin-thumb.png" alt="小欣老師" loading="lazy">
+        </div>
+        🏆 探究迴圈完成！<br>你剛剛做了真正的科學探究：觀察 → 實驗 → 記錄 → 分析 → 表達 → 回頭驗證。<br>這就是科學家的一天。幫自己鼓掌！👏
+      </div>
+    </div>
+    <div class="next-row"><a class="btn btn-green" href="index.html">🗺️ 回探險島，挑下一個任務！</a></div>
+  </section>
+
+  <footer class="footer">
+    <details>
+      <summary>🎯 給老師與家長：本學習單對應的課綱</summary>
+      <p style="margin:.6em 0"><strong>學習內容</strong>：Db-IV-2 動物體（以人體為例）的循環系統能將體內的物質運輸至各細胞處，並進行物質交換。並經由心跳、心音及脈搏的探測，以了解循環系統的運作情形。</p>
+      <p style="margin:.6em 0 0"><strong>學習表現</strong>：觀察與定題／計劃與執行／分析與發現／討論與傳達（詳見資料庫欄位）。</p>
+    </details>
+    <p>科學探險島 · 虛擬實驗探究學習網站｜© 2026 簡子惠老師 版權所有<br>作答內容只保存在你自己的瀏覽器裡，不會上傳。</p>
+  </footer>
+</main>
+
+<script src="assets/lab.js"></script>
+</body>
+</html>
