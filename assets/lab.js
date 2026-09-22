@@ -1,4 +1,4 @@
-/* 科學探險島 · 互動引擎 v3.2.2（徽章＋信箱）（暫存制：作答手動暫存／全完成自動存）（功能同 v2；v2.5.1 僅角色圖修正） */
+/* 科學探險島 · 互動引擎 v3.2.3（徽章＋浮動信箱）（暫存制：作答手動暫存／全完成自動存）（功能同 v2；v2.5.1 僅角色圖修正） */
 (function () {
   'use strict';
 
@@ -306,8 +306,7 @@
   }
 
 
-  /* ===== v3.2 探險徽章圖鑑 =====
-     徽章 key 用頁面檔名（不依賴 data-lab），首頁護照用卡片 href 對應 */
+  /* ===== v3.2.x 徽章圖鑑（key 用頁面檔名） + 浮動信箱 ===== */
   function badgeKeyFor(href) { return 'vlab:badge:' + href; }
   function myBadgeKey() {
     var f = location.pathname.split('/').pop() || 'index.html';
@@ -363,6 +362,17 @@
     var bar = $('#passport-bar'); if (bar) bar.style.width = (total ? Math.round(earned / total * 100) : 0) + '%';
   }
 
+  function initMailFab() {
+    var a = document.createElement('a');
+    a.className = 'mail-fab';
+    var page = document.title || '首頁';
+    var subj = '科學探險島回報：' + page;
+    var body = '老師好！\n\n我在這一頁：' + page + '\n' + location.href + '\n\n我想回報的問題或建議：\n';
+    a.href = 'mailto:azt156@gmail.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+    a.innerHTML = '📮 <span>有 bug？寄信給老師</span>';
+    document.body.appendChild(a);
+  }
+
   function burst() {
     var box = document.createElement('div');
     box.className = 'confetti';
@@ -411,6 +421,7 @@
     initFilters();
     initBadge();
     initPassport();
+    initMailFab();
     updateProgress();
   });
 })();

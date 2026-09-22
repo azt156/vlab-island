@@ -43,18 +43,14 @@
   </section>
 
   <section class="section" id="passport">
-    <div class="sec-head"><span class="sec-num c-yellow">🏅</span><h2 class="sec-title">我的探險護照</h2><p class="sec-sub">每完成一頁最後的「自我驗證」四個打勾，就能收集那一頁的徽章——回到這裡就會亮起來！</p></div>
-    <div class="card ps-summary"><span class="ps-big">🏅 已收集 <b id="passport-count">0</b> / <span id="passport-total">123</span> 枚徽章</span><div class="ps-meter"><div class="ps-meter-fill" id="passport-bar"></div></div><p class="ps-tip">徽章只保存在你自己的瀏覽器裡（換電腦或清除瀏覽器資料會重新收集）。灰灰的格子點一下，可以直接跳回那一頁繼續探險！</p></div>
-    <div id="passport-grid"></div>
-  </section>
-
-  <section class="section" id="mailbox">
-    <div class="card mailbox">
-      <div class="mb-emoji">📮</div>
-      <div class="mb-txt"><b>發現 bug 或有建議？寄信給簡子惠老師！</b>
-      <p>例如：某一頁實驗打不開、答案怪怪的、想要新主題——都歡迎告訴我。</p></div>
-      <a class="btn btn-blue" href="mailto:azt156@gmail.com?subject=%E7%A7%91%E5%AD%B8%E6%8E%A2%E9%9A%AA%E5%B3%B6%E5%9B%9E%E5%A0%B1&body=%E8%80%81%E5%B8%AB%E5%A5%BD%EF%BC%81%0A%0A%E6%88%91%E5%9C%A8%E9%80%99%E4%B8%80%E9%A0%81%EF%BC%9A%EF%BC%88%E8%AB%8B%E8%B2%BC%E4%B8%8A%E9%A0%81%E9%9D%A2%E5%90%8D%E7%A8%B1%E6%88%96%E7%B6%B2%E5%9D%80%EF%BC%89%0A%0A%E6%88%91%E6%83%B3%E5%9B%9E%E5%A0%B1%E7%9A%84%E5%95%8F%E9%A1%8C%E6%88%96%E5%BB%BA%E8%AD%B0%EF%BC%9A%0A">📮 寫信給老師</a>
-    </div>
+    <details class="card passport-fold">
+      <summary><span class="pf-title">🏅 我的探險護照</span><span class="pf-count">已收集 <b id="passport-count">0</b> / <span id="passport-total">123</span> 枚徽章</span><span class="arrow">▶</span></summary>
+      <div class="ps-in">
+        <div class="ps-meter"><div class="ps-meter-fill" id="passport-bar"></div></div>
+        <p class="ps-tip">每完成一頁最後的「自我驗證」四個打勾，就能收集那一頁的徽章。徽章只保存在你自己的瀏覽器裡；灰灰的格子點一下，可以直接跳回那一頁繼續探險！</p>
+        <div id="passport-grid"></div>
+      </div>
+    </details>
   </section>
 
   <section id="list" class="section">
