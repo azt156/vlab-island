@@ -335,3 +335,20 @@ table.tbl{border-collapse:collapse;width:100%;min-width:580px}
 .ws-head-row{display:flex !important;align-items:center;gap:12px}
 .ws-head-row p{padding-right:0}
 .ws-head-row img.char{position:static;width:52px !important;flex:none;margin:0}
+
+
+/* v3.2 探險護照 */
+.ps-summary{padding:18px 22px;margin-bottom:18px}
+.ps-big{font-size:1.3rem}
+.ps-big b{font-size:1.6rem;color:var(--blue)}
+.ps-meter{height:16px;border:3px solid var(--ink);border-radius:999px;background:#fff;margin:12px 0 8px;overflow:hidden}
+.ps-meter-fill{height:100%;width:0;background:linear-gradient(90deg,var(--yellow),var(--orange));transition:width .5s}
+.ps-tip{margin:6px 0 0;font-weight:500;font-size:.92rem;color:var(--ink-soft)}
+.ps-group{margin-bottom:16px}
+.ps-head{font-weight:700;font-size:1.05rem;margin:0 0 8px}
+.ps-head span{color:var(--ink-soft);font-weight:500}
+.ps-cells{display:flex;flex-wrap:wrap;gap:8px}
+.ps-cell{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:14px;border:3px solid var(--ink);background:#fff;text-decoration:none;font-size:1.25rem;box-shadow:2.5px 2.5px 0 var(--ink);filter:grayscale(1);opacity:.45;transition:transform .1s,filter .2s,opacity .2s}
+.ps-cell.got{filter:none;opacity:1;background:var(--yellow-soft)}
+.ps-cell:hover{transform:translateY(-2px)}
+.badge-note{margin-top:10px;background:#fff;border:2.5px solid var(--ink);border-radius:12px;padding:8px 14px;font-size:1rem}

@@ -1,4 +1,4 @@
-/* 科學探險島 · 互動引擎 v3.0.2（暫存制：作答手動暫存／全完成自動存）（功能同 v2；v2.5.1 僅角色圖修正） */
+/* 科學探險島 · 互動引擎 v3.2（徽章圖鑑）（暫存制：作答手動暫存／全完成自動存）（功能同 v2；v2.5.1 僅角色圖修正） */
 (function () {
   'use strict';
 
@@ -304,6 +304,65 @@
       if (!reducedMotion) burst();
     }
   }
+
+
+  /* ===== v3.2 探險徽章圖鑑 =====
+     徽章 key 用頁面檔名（不依賴 data-lab），首頁護照用卡片 href 對應 */
+  function badgeKeyFor(href) { return 'vlab:badge:' + href; }
+  function myBadgeKey() {
+    var f = location.pathname.split('/').pop() || 'index.html';
+    return badgeKeyFor(f);
+  }
+
+  function initBadge() {
+    var goals = $$('input[data-goal]');
+    if (!goals.length) return;
+    function award() {
+      if (!goals.every(function (g) { return g.checked; })) return;
+      try { localStorage.setItem(myBadgeKey(), '1'); } catch (e) {}
+      var banner = $('.loop-done');
+      if (banner && !banner.querySelector('.badge-note')) {
+        banner.insertAdjacentHTML('beforeend', '<div class="badge-note">🏅 這頁的探險徽章到手了！回到首頁的「我的探險護照」就會看到它亮起來。</div>');
+      }
+    }
+    goals.forEach(function (g) { g.addEventListener('change', award); });
+    award(); /* 已完成過的頁面自動補發 */
+  }
+
+  function initPassport() {
+    var grid = $('#passport-grid');
+    if (!grid) return;
+    var cards = $$('.wcard');
+    var groups = {}; var order = [];
+    cards.forEach(function (c) {
+      var href = c.getAttribute('href');
+      if (!href || href.indexOf('.html') === -1) return;
+      var g = c.getAttribute('data-grade') || '其他';
+      var tEl = c.querySelector('.wcard-title');
+      var t = tEl ? tEl.textContent.trim() : href;
+      if (!groups[g]) { groups[g] = []; order.push(g); }
+      groups[g].push({ href: href, title: t });
+    });
+    var total = 0, earned = 0, html = '';
+    order.forEach(function (g) {
+      var items = groups[g];
+      var icon = g.indexOf('生物') > -1 ? '🧬' : (g.indexOf('理化') > -1 ? '⚗️' : (g.indexOf('地科') > -1 ? '🌍' : '🔬'));
+      var ge = 0, cells = '';
+      items.forEach(function (it) {
+        total++;
+        var got = false;
+        try { got = localStorage.getItem(badgeKeyFor(it.href)) === '1'; } catch (e) {}
+        if (got) { earned++; ge++; }
+        cells += '<a class="ps-cell' + (got ? ' got' : '') + '" href="' + it.href + '" title="' + it.title.replace(/"/g, '') + '">' + (got ? icon : '❔') + '</a>';
+      });
+      html += '<div class="ps-group"><div class="ps-head">' + icon + ' ' + g + '　<span>' + ge + ' / ' + items.length + '</span></div><div class="ps-cells">' + cells + '</div></div>';
+    });
+    grid.innerHTML = html;
+    var cnt = $('#passport-count'); if (cnt) cnt.textContent = earned;
+    var tot = $('#passport-total'); if (tot) tot.textContent = total;
+    var bar = $('#passport-bar'); if (bar) bar.style.width = (total ? Math.round(earned / total * 100) : 0) + '%';
+  }
+
   function burst() {
     var box = document.createElement('div');
     box.className = 'confetti';
@@ -350,6 +409,8 @@
     initChart();
     initQCards();
     initFilters();
+    initBadge();
+    initPassport();
     updateProgress();
   });
 })();
